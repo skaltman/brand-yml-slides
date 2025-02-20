@@ -1,0 +1,63 @@
+color:
+  palette:
+    primary-blue: "#2563EB"   
+    soft-blue: "#A5C8FF"      
+    paper-white: "#FCFDFF"    
+    subtle-sky-blue: "#D6EBFF" 
+    cool-ocean-blue: "#5A94F2" 
+    dark-gray: "#333B42"      
+    high-contrast-green: "#18A558" 
+  foreground: dark-gray        
+  background: paper-white      
+  primary: primary-blue    
+  secondary: soft-blue  
+  info: cool-ocean-blue   
+  success: high-contrast-green 
+  warning: "#FFC107" 
+  danger: "#DC3545"        
+
+typography:
+  fonts:
+    - family: Work Sans
+      source: google
+      weight: [300, 400, 600]  
+      style: [normal, italic]
+
+    - family: Playfair Display
+      source: google
+      weight: [500, 700]  
+      style: [normal, italic]
+
+    - family: JetBrains Mono
+      source: google
+      weight: [400, 600]  # Regular and semi-bold for code/monospace
+      style: [normal, italic]
+
+  base:
+    family: Work Sans
+    weight: 400
+    size: 36px
+    line-height: 1.5
+
+  headings:
+    family: Playfair Display
+    weight: 700
+    style: normal
+    line-height: 1.2
+    color: primary-blue  
+
+  monospace:
+    family: JetBrains Mono
+    weight: 400
+    size: 0.9em
+  monospace-inline:
+    color: primary-blue
+    background-color: subtle-sky-blue
+  monospace-block:
+    color: foreground
+    background-color: background
+    line-height: 1.4
+  link:
+    weight: 600
+    color: high-contrast-green
+    decoration: underline

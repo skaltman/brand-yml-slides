@@ -1,0 +1,316 @@
+---
+title: "Easy, unified branding with brand.yml"
+author: "Sara Altman"
+date: "2025-02-26"
+date-format: long
+format: 
+    revealjs:
+        theme: styles.scss
+        incremental: true  
+footer: github.com/skaltman/brand-yml-demo
+---
+
+## Take your Shiny apps from this ...
+
+![](images/shiny-no-branding.png)
+
+## to this!
+
+![](images/shiny-branding.png) 
+
+
+## And your Quarto docs from this ...
+
+![](images/quarto-no-branding.png){fig-align="center"}
+
+
+## to this!
+
+![](images/quarto-branding.png){fig-align="center"}
+
+## Overview
+
+::: {.incremental}
+1. Why brand.yml?
+2. How to structure a `_brand.yml` file
+3. Use brand.yml with Quarto and Shiny
+4. Create a `_brand.yml` file with an LLM
+:::
+
+##
+
+### Why use brand.yml?
+
+##
+
+![](images/data-person.png){fig-align="center"}
+
+##
+
+![](images/data-outputs.png){fig-align="center"}
+
+##
+
+![](images/style-guide.png){fig-align="center"}
+
+## You need branding
+
+* You want your work to look _professional_, _cohesive_, and _polished_. 
+    * Branding is a subtle, but powerful, way to make your work shine.
+* Your organization requires you to follow brand guidelines.
+
+## Branding can be _hard_
+
+* Excessive manual effort
+* Difficulty updating
+* Ensuring team consistency
+
+
+## Enter brand.yml
+
+1. Define branding in a single `_brand.yml` file
+2. Instantly apply branding across Quarto documents, Shiny apps, and more
+
+## Enter brand.yml
+
+::: {.nonincremental}
+1. Define branding in a single `_brand.yml` file
+2. Instantly apply branding across Quarto documents, Shiny apps, and more
+:::
+
+![](images/shiny-no-brand-to-brand.png)
+<!-- brand.yml is maintained by the Shiny team --> 
+
+## `_brand.yml` structure
+
+```{.yaml code-line-numbers="1|6|9|23"}
+meta: 
+  name: Example Company
+  link: 
+    github: https://github.com/skaltman/brand-yml-blog
+
+logo: 
+  medium: logos/logo.png
+
+color:
+  palette:
+    black: "#1C2826"
+    blue: "#0C0A3E" 
+    gray: "#2A2E45"
+    neutral: "#F9F7F1" 
+    red: "#BA274A"
+    violet: "#4D6CFA"
+  background: neutral
+  foreground: black
+  primary: blue
+  secondary: violet
+  info: red
+
+typography:
+  fonts:
+    - family: Nunito Sans
+      source: google
+    - family: Montserrat
+      source: google
+    - family: Fira Code
+      source: google
+
+  base: Nunito Sans
+  headings:
+    family: Montserrat
+    weight: 700
+    color: primary
+  monospace: Fira Code
+  link:
+    color: info
+    decoration: underline
+```
+
+## `_brand.yml` structure
+
+* `meta`: Identifying information, name of the company, URLs, etc.
+* `logo`: Files or links to the brand’s logos.
+* `color`: Colors in the brand's color palette. 
+* `typography`: Fonts for different elements. 
+* `defaults`: Additional context-specific settings.
+
+## Colors
+
+```{.yaml code-line-numbers="10-16|17-21"}
+meta: 
+  name: Example Company
+  link: 
+    github: https://github.com/skaltman/brand-yml-blog
+
+logo: 
+  medium: logos/logo.png
+
+color:
+  palette:
+    black: "#1C2826"
+    blue: "#0C0A3E" 
+    gray: "#2A2E45"
+    neutral: "#F9F7F1" 
+    red: "#BA274A"
+    violet: "#4D6CFA"
+  background: neutral
+  foreground: black
+  primary: blue
+  secondary: violet
+  info: red
+
+typography:
+  fonts:
+    - family: Nunito Sans
+      source: google
+    - family: Montserrat
+      source: google
+    - family: Fira Code
+      source: google
+
+  base: Nunito Sans
+  headings:
+    family: Montserrat
+    weight: 700
+    color: primary
+  monospace: Fira Code
+  link:
+    color: info
+    decoration: underline
+```
+
+## Typography
+
+```{.yaml code-line-numbers="|24-30|32-41"}
+meta: 
+  name: Example Company
+  link: 
+    github: https://github.com/skaltman/brand-yml-blog
+
+logo: 
+  medium: logos/logo.png
+
+color:
+  palette:
+    black: "#1C2826"
+    blue: "#0C0A3E" 
+    gray: "#2A2E45"
+    neutral: "#F9F7F1" 
+    red: "#BA274A"
+    violet: "#4D6CFA"
+  background: neutral
+  foreground: black
+  primary: blue
+  secondary: violet
+  info: red
+
+typography:
+  fonts:
+    - family: Nunito Sans
+      source: google
+    - family: Montserrat
+      source: google
+    - family: Fira Code
+      source: google
+
+  base: Nunito Sans
+  headings:
+    family: Montserrat
+    weight: 700
+    color: primary
+  monospace: Fira Code
+  link:
+    color: info
+    decoration: underline
+```
+
+## Overview
+
+::: {.nonincremental}
+1. Why brand.yml?
+2. How to structure a `_brand.yml` file
+3. Use brand.yml with Quarto and Shiny
+4. Create a `_brand.yml` file with an LLM
+:::
+
+## Overview 
+
+::: {.nonincremental}
+1. Why brand.yml?
+2. How to structure a `_brand.yml` file
+3. **Use brand.yml with Quarto and Shiny**
+4. Create a `_brand.yml` file with an LLM
+:::
+
+## Brand Quarto and Shiny outputs
+
+## Quarto
+
+* Create a `_brand.yml` in the same directory.
+
+* You can also specify a brand.yml file in the Quarto YAML header or in a `_quarto.yml` file.
+
+
+## Shiny for R
+
+* Create a `_brand.yml` in the same directory. 
+* You can also pass a brand.yml file to `bs_theme()`, e.g.:
+
+## Shiny for R
+
+::: {.nonincremental}
+* Create a `_brand.yml` in the same directory. 
+* Or, pass a brand.yml file to `bs_theme()`, e.g.:
+:::
+
+```{.r}
+ui <- page_sidebar(
+    title = "Acme Sales Dashboard",
+    theme = bs_theme(brand = "acme-brand.yml"),
+    # ... 
+)
+```
+
+## Shiny for Python
+
+::: {.panel-tabset}
+
+### Express
+
+```{.python}
+from shiny.express import input, render, ui
+
+ui.page_opts(theme=ui.Theme.from_brand(__file__))
+```
+
+### Core
+
+```{.python}
+from shiny import ui
+
+app_ui = ui.page_fluid(
+    # App UI code...
+    theme=ui.Theme.from_brand(__file__)
+)
+```
+:::
+
+## Generating a brand.yml with an LLM
+
+[Article on the brand.yml site](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/?_gl=1*1knq4ak*_ga*MTQ5NjYxNzQ2OS4xNzMwOTMyNzMy*_ga_2C0WZ1JHG0*MTczOTU4MjUzMy4xNC4xLjE3Mzk1ODI4NDIuMC4wLjA)
+
+
+## Experiment with brand.yml
+
+[https://shinylive.io/py/examples/#branded-theming](https://shinylive.io/py/examples/#branded-theming)
+
+## Advantages of brand.yml
+
+* **Common syntax for theming** across different outputs. 
+* **Consistent branding with minimal effort**.
+* **Easy collaboration**.
+* Uses **beyond corporate branding.**
+
+## Thank you!
+
+Looking forward to your questions in the Q&A.

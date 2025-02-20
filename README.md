@@ -1,2 +1,5 @@
 # brand-yml-demo
-Materials for brand.yml workflow demo
+
+Slides for brand.yml workflow demo.
+
+See the materials, including the `_brand.yml` file, used in the presentation [here](https://github.com/skaltman/brand-yml-blog/tree/main). 
