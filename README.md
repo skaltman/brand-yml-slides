@@ -1,4 +1,4 @@
-# brand-yml-demo
+# brand-yml-slides
 
 Slides for brand.yml workflow demo.
 
