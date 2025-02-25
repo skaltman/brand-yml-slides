@@ -295,6 +295,88 @@ app_ui = ui.page_fluid(
 ```
 :::
 
+## What's currently supported?
+
+[https://posit-dev.github.io/brand-yml/](https://posit-dev.github.io/brand-yml/)
+
+::: {style="--mermaid-max-height: 500px"}
+```{mermaid}
+---
+config:
+  look: handDrawn
+  theme: neutral
+---
+flowchart LR
+    by{brand.yml}
+    by-->quarto[Quarto]
+    quarto-->quarto-html
+    quarto-->quarto-pdf
+    quarto-html-->quarto-websites[Websites]
+    quarto-html-->quarto-presentations[Presentations]
+    quarto-html-->quarto-dashboards[Dashboards]
+    quarto-html-->quarto-emails[Emails]
+    quarto-pdf-->quarto-typst[Typst]
+
+    by-->R
+    R-->r-bslib["{bslib}"]
+    r-bslib-->r-thematic["{thematic}"]
+    r-bslib-->r-shiny["Shiny for R"]
+    r-bslib-->r-rmd["R Markdown"]
+    r-bslib-->r-pkgdown["pkgdown"]
+    %% r-thematic-->r-ggplot2["{ggplot2}"]
+    %% r-thematic-->r-plot["{plot}"]
+
+    by-->Python
+    Python-->py-brand_yml["brand_yml"]
+    py-brand_yml-->py-shiny[Shiny for Python]
+    py-brand_yml-->py-plots[seaborn, matplotlib, etc.]
+
+    classDef implemented fill:#8CE3A0,stroke:#0A2911,color:#0A2911;
+    classDef partial fill:#A8E5B9,stroke:#4B8A5D,color:#0A2911;
+    classDef in-progress fill:#B3D7FF,stroke:#00254D,color:#00254D;
+    classDef highlighted fill:#FFE8DB,stroke:#612200,color:#612200;
+
+    class quarto-websites,quarto-presentations,quarto-dashboards,quarto-typst,py-brand_yml,py-shiny,r-bslib,r-shiny,r-rmd,r-pkgdown implemented;
+    class r-thematic,py-plots partial;
+    class by highlighted;
+
+    click quarto href "https://prerelease.quarto.org/docs/authoring/brand.html"
+    click quarto-typst href "https://quarto.org/docs/output-formats/typst.html" "Typst in Quarto"
+    click quarto-presentations href "https://quarto.org/docs/presentations/revealjs/" "Reveal.js in Quarto"
+    click quarto-dashboards href "https://quarto.org/docs/dashboards/" "Dashboards in Quarto"
+    click r-shiny href "https://shiny.posit.co/"
+    click r-bslib href "https://rstudio.github.io/bslib/"
+    click r-thematic href "https://rstudio.github.io/thematic/"
+    click r-ggplot2 href "https://ggplot2.tidyverse.org/"
+    click r-rmd href "https://rmarkdown.rstudio.com/"
+    click py-shiny href "https://shiny.posit.co/py/"
+    click py-brand_yml href "pkg/py/"
+```
+:::
+
+<style>
+.mermaid-js {
+  max-height: var(--mermaid-max-height);
+}
+.mermaid-js .nodeLabel {
+  color: var(--bs-black) !important;
+  font-weight: 500;
+}
+.implemented {
+  background-color: #8CE3A0;
+  border-color: #0A2911;
+  color: #0A2911;
+  padding-inline: 0.2rem
+}
+
+.in-progress {
+  background-color: #B3D7FF;
+  border-color: #00254D;
+  color: #00254D;
+  padding-inline: 0.2rem
+}
+</style>
+
 ## Generating a brand.yml with an LLM
 
 [Article on the brand.yml site](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/?_gl=1*1knq4ak*_ga*MTQ5NjYxNzQ2OS4xNzMwOTMyNzMy*_ga_2C0WZ1JHG0*MTczOTU4MjUzMy4xNC4xLjE3Mzk1ODI4NDIuMC4wLjA)
