@@ -10,31 +10,42 @@ format:
 footer: github.com/skaltman/brand-yml-demo
 ---
 
-## Take your Shiny apps from this ...
+## Transform your work from this ...
 
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/quarto-no-branding.png)
+:::
+
+::: {.column width="50%"}
 ![](images/shiny-no-branding.png)
+:::
 
-## to this!
-
-![](images/shiny-branding.png) 
-
-
-## And your Quarto docs from this ...
-
-![](images/quarto-no-branding.png){fig-align="center"}
+::::
 
 
 ## to this!
 
-![](images/quarto-branding.png){fig-align="center"}
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/quarto-branding.png)
+:::
+
+::: {.column width="50%"}
+![](images/shiny-branding.png)
+:::
+
+::::
 
 ## Overview
 
 ::: {.incremental}
 1. Why brand.yml?
-2. How to structure a `_brand.yml` file
+2. How to structure a brand file
 3. Use brand.yml with Quarto and Shiny
-4. Create a `_brand.yml` file with an LLM
+4. Create a brand file with an LLM
 :::
 
 ##
@@ -53,10 +64,17 @@ footer: github.com/skaltman/brand-yml-demo
 
 ![](images/style-guide.png){fig-align="center"}
 
+##
+
+![](images/apply-branding.png){fig-align="center"}
+
+##
+
+![](images/apply-branding-questions.png){fig-align="center"}
+
 ## You need branding
 
 * You want your work to look _professional_, _cohesive_, and _polished_. 
-    * Branding is a subtle, but powerful, way to make your work shine.
 * Your organization requires you to follow brand guidelines.
 
 ## Branding can be _hard_
@@ -68,8 +86,8 @@ footer: github.com/skaltman/brand-yml-demo
 
 ## Enter brand.yml
 
-1. Define branding in a single `_brand.yml` file
-2. Instantly apply branding across Quarto documents, Shiny apps, and more
+1. Define branding in a single `_brand.yml` file.
+2. Instantly apply branding across Quarto documents, Shiny apps, and more.
 
 ## Enter brand.yml
 
@@ -83,7 +101,7 @@ footer: github.com/skaltman/brand-yml-demo
 
 ## `_brand.yml` structure
 
-```{.yaml code-line-numbers="1|6|9|23"}
+```{.yaml code-line-numbers="1|6|9|22"}
 meta: 
   name: Example Company
   link: 
@@ -96,7 +114,6 @@ color:
   palette:
     black: "#1C2826"
     blue: "#0C0A3E" 
-    gray: "#2A2E45"
     neutral: "#F9F7F1" 
     red: "#BA274A"
     violet: "#4D6CFA"
@@ -104,7 +121,7 @@ color:
   foreground: black
   primary: blue
   secondary: violet
-  info: red
+  danger: red
 
 typography:
   fonts:
@@ -122,7 +139,7 @@ typography:
     color: primary
   monospace: Fira Code
   link:
-    color: info
+    color: danger
     decoration: underline
 ```
 
@@ -136,7 +153,7 @@ typography:
 
 ## Colors
 
-```{.yaml code-line-numbers="10-16|17-21"}
+```{.yaml code-line-numbers="9-15|16-20"}
 meta: 
   name: Example Company
   link: 
@@ -149,7 +166,6 @@ color:
   palette:
     black: "#1C2826"
     blue: "#0C0A3E" 
-    gray: "#2A2E45"
     neutral: "#F9F7F1" 
     red: "#BA274A"
     violet: "#4D6CFA"
@@ -157,7 +173,7 @@ color:
   foreground: black
   primary: blue
   secondary: violet
-  info: red
+  danger: red
 
 typography:
   fonts:
@@ -175,13 +191,13 @@ typography:
     color: primary
   monospace: Fira Code
   link:
-    color: info
+    color: danger
     decoration: underline
 ```
 
 ## Typography
 
-```{.yaml code-line-numbers="|24-30|32-41"}
+```{.yaml code-line-numbers="|23-29|31-40"}
 meta: 
   name: Example Company
   link: 
@@ -194,7 +210,6 @@ color:
   palette:
     black: "#1C2826"
     blue: "#0C0A3E" 
-    gray: "#2A2E45"
     neutral: "#F9F7F1" 
     red: "#BA274A"
     violet: "#4D6CFA"
@@ -202,7 +217,7 @@ color:
   foreground: black
   primary: blue
   secondary: violet
-  info: red
+  danger: red
 
 typography:
   fonts:
@@ -220,7 +235,7 @@ typography:
     color: primary
   monospace: Fira Code
   link:
-    color: info
+    color: danger
     decoration: underline
 ```
 
@@ -228,18 +243,18 @@ typography:
 
 ::: {.nonincremental}
 1. Why brand.yml?
-2. How to structure a `_brand.yml` file
+2. How to structure a brand file
 3. Use brand.yml with Quarto and Shiny
-4. Create a `_brand.yml` file with an LLM
+4. Create a brand file with an LLM
 :::
 
 ## Overview 
 
 ::: {.nonincremental}
 1. Why brand.yml?
-2. How to structure a `_brand.yml` file
+2. How to structure a brand file
 3. **Use brand.yml with Quarto and Shiny**
-4. Create a `_brand.yml` file with an LLM
+4. Create a brand file with an LLM
 :::
 
 ## Brand Quarto and Shiny outputs
@@ -254,7 +269,7 @@ typography:
 ## Shiny for R
 
 * Create a `_brand.yml` in the same directory. 
-* You can also pass a brand.yml file to `bs_theme()`, e.g.:
+* Or, pass a brand.yml file to `bs_theme()`, e.g.:
 
 ## Shiny for R
 
@@ -376,6 +391,7 @@ flowchart LR
   padding-inline: 0.2rem
 }
 </style>
+
 
 ## Generating a brand.yml with an LLM
 
